@@ -1,121 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fisq.org | Vivian's personal website">
-<title>Fisq.org</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<style>
-  #splash {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg);
-    cursor: pointer;
-    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-    user-select: none;
-  }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Fisq.org | Vivian's personal website"
+        />
+        <title>Fisq.org</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+        <style>
+            #splash {
+                position: fixed;
+                inset: 0;
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--bg);
+                cursor: pointer;
+                transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+                user-select: none;
+            }
 
-  #splash.fade-out {
-    opacity: 0;
-    pointer-events: none;
-  }
+            #splash.fade-out {
+                opacity: 0;
+                pointer-events: none;
+            }
 
-  .gif-box {
-    width: 280px;
-    height: 280px;
-    border-radius: 3px;
-    overflow: hidden;
-    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
+            .gif-box {
+                width: 280px;
+                height: 280px;
+                border-radius: 3px;
+                overflow: hidden;
+                transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
 
-  .gif-box:hover {
-    transform: rotate(-2.5deg) scale(1.04);
-  }
+            .gif-box:hover {
+                transform: rotate(-2.5deg) scale(1.04);
+            }
 
-  .gif-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+            .gif-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
-  #content {
-    opacity: 0;
-    transition: opacity 0.8s ease 0.4s;
-  }
-  #content.visible { opacity: 1; }
-</style>
-</head>
-<body>
+            #content {
+                opacity: 0;
+                transition: opacity 0.8s ease 0.4s;
+            }
+            #content.visible {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="scanlines"></div>
 
-<div class="scanlines"></div>
+        <div id="splash" onclick="reveal()">
+            <div class="gif-box">
+                <img
+                    src="https://assets.vivwebz.net/9ee1e68e0bdbfae7f2f772aca6e66edc.jpg"
+                    alt=""
+                />
+            </div>
+        </div>
 
-<div id="splash" onclick="reveal()">
-  <div class="gif-box">
-    <img src="https://assets.vivwebz.net/9ee1e68e0bdbfae7f2f772aca6e66edc.jpg" alt="">
-  </div>
-</div>
+        <div id="content">
+            <main>
+                <div class="hero">
+                    <h1>
+                        the internet's most dysphoric puppygirl
+                        <img
+                            class="e"
+                            src="https://assets.vivwebz.net/15583-oneko-sleep.gif"
+                            alt=""
+                        />
+                    </h1>
+                    <p>
+                        a chronically online girlenby
+                        <img
+                            class="e"
+                            src="https://assets.vivwebz.net/22085-transgenderflag.png"
+                            alt="transgender flag"
+                        />
+                        <img
+                            class="e"
+                            src="https://assets.vivwebz.net/306760-nonbinary.png"
+                            alt="transgender flag"
+                        />
+                        who probably cares too much about expressing her demand
+                        for global privacy rights to you
+                    </p>
+                </div>
 
-<div id="content">
-  <main>
-    <div class="hero">
-      <h1>the internet's most dysphoric puppygirl <img class="e" src="https://assets.vivwebz.net/15583-oneko-sleep.gif" alt=""></h1>
-      <p>a chronically online girlenby <img class="e" src="https://assets.vivwebz.net/22085-transgenderflag.png" alt="transgender flag"> <img class="e" src="https://assets.vivwebz.net/306760-nonbinary.png" alt="transgender flag"> who probably cares too much about expressing her demand for global privacy rights to you</p>
-    </div>
+                <section>
+                    <h2>about</h2>
+                    <p>i'm <code id="age-display"></code> years old</p>
+                    <p>
+                        she/they —
+                        <a href="https://lgbtqia.wiki/wiki/Girlby">girlenby</a>
+                    </p>
+                    <br />
+                    <p>
+                        this is a personal website; I intend to convert it from
+                        using standalone HTML, CSS, JS -> to using a static site
+                        generation such as Astro
+                    </p>
+                    <br />
+                    <p>
+                        the purpose of this website is for me (Vivian) to
+                        microblog and keep updates on my life; eventually it may
+                        serve as an archive after I die if I continue to use
+                        this website throughout my lifetime
+                    </p>
+                </section>
 
-    <section>
-      <h2>about</h2>
-      <p>i'm <code id="age-display"></code> years old</p>
-      <p>she/they — <a href="https://lgbtqia.wiki/wiki/Girlby">girlenby</a></p>
-      <br>
-      <p>this is a personal website; I intend to convert it from using standalone HTML, CSS, JS -> to using a static site generation such as Astro</p>
-      <br>
-      <p>the purpose of this website is for me (Vivian) to microblog and keep updates on my life; eventually it may serve as an archive after I die if I continue to use this website throughout my lifetime</p>
-    </section>
+                <section>
+                    <h2>microblogging</h2>
+                    <p><em>to be here soon...</em></p>
+                </section>
 
-    <section>
-      <h2>microblogging</h2>
-      <p><em>to be here soon...</em></p>
-    </section>
+                <section>
+                    <h2>contact</h2>
+                    <p>
+                        fluxer — <em>qwq#1234</em> (im not so active here; but I
+                        love open-source software)
+                    </p>
+                    <p>
+                        discord — <em>eeveestatic</em> (arguably the messaging
+                        platform I'm most active on)
+                    </p>
+                </section>
+            </main>
+        </div>
 
-    <section>
-      <h2>contact</h2>
-      <p>fluxer — <em>qwq#1234</em> (im not so active here; but I love open-source software)</p>
-      <p>discord — <em>eeveestatic</em> (arguably the messaging platform I'm most active on)</p>
-    </section>
-  </main>
-</div>
+        <audio
+            id="bgm"
+            src="https://assets.vivwebz.net/a_part_of_me.mp3"
+            loop
+            preload="auto"
+        ></audio>
 
-<audio id="bgm" src="https://assets.vivwebz.net/a_part_of_me.mp3" loop preload="auto"></audio>
+        <script>
+            function reveal() {
+                const bgm = document.getElementById("bgm");
+                bgm.volume = 0.5;
+                document.getElementById("splash").classList.add("fade-out");
+                document.getElementById("content").classList.add("visible");
+                bgm.play().catch(() => {});
+                setTimeout(
+                    () => document.getElementById("splash").remove(),
+                    1000,
+                );
+            }
 
-<script>
-  function reveal() {
-    const bgm = document.getElementById('bgm');
-    bgm.volume = 0.5;
-    document.getElementById('splash').classList.add('fade-out');
-    document.getElementById('content').classList.add('visible');
-    bgm.play().catch(() => {});
-    setTimeout(() => document.getElementById('splash').remove(), 1000);
-  }
+            const birthday = new Date("2009-12-21"); // your birthday
 
-  const birthday = new Date('2009-12-21'); // your birthday
+            function updateAge() {
+                const ageMs = Date.now() - birthday.getTime();
+                const age = ageMs / (1000 * 60 * 60 * 24 * 365.25);
+                document.getElementById("age-display").textContent =
+                    age.toFixed(10);
+            }
 
-  function updateAge() {
-    const ageMs = Date.now() - birthday.getTime();
-    const age = ageMs / (1000 * 60 * 60 * 24 * 365.25);
-    document.getElementById('age-display').textContent = age.toFixed(10);
-  }
-
-  updateAge();
-  setInterval(updateAge, 100);
-</script>
-</body>
+            updateAge();
+            setInterval(updateAge, 100);
+        </script>
+    </body>
 </html>
